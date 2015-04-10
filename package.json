@@ -4,6 +4,7 @@
   "description": "Start project",
   "main": "gulpfile.js",
   "scripts": {
+    "update": "npm install && npm prune",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
