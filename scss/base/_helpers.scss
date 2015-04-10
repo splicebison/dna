@@ -1,0 +1,22 @@
+.text-upper,
+%text-upper {
+    text-transform: uppercase;
+}
+
+.text-center,
+%text-center {
+    text-align: center;
+}
+
+.contain,
+%contain {
+	@include outer-container(1088px);
+	padding: $base-spacing-unit;
+}
+
+.list-flat,
+%list-flat {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}

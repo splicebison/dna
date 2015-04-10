@@ -1,0 +1,56 @@
+/*------------------------------------*\
+    #BASE
+\*------------------------------------*/
+
+html {
+    font-size: ($base-font-size / 16px) * 1em;
+    line-height: $base-line-height / $base-font-size;
+    overflow-y: scroll;
+    min-height: 100%;
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+     -webkit-font-smoothing: antialiased;
+}
+
+body {
+    color: $text-color;
+    font-family: $primary-font-family;
+    background: $background-color;
+
+}
+
+h1, h2, h3, h4, h5, h6,
+ul, ol, dl,
+blockquote, p, address,
+hr,
+table,
+fieldset, figure,
+pre,
+%margin-bottom {
+    margin-bottom: $base-spacing-unit;
+    margin-bottom: ($base-spacing-unit / $base-font-size) * 1rem;
+}
+
+ul, ol, dd,
+%margin-left {
+    margin-left: 2 * $base-spacing-unit;
+    margin-left: (2 * $base-spacing-unit / $base-font-size) * 1rem;
+}
+
+a {
+    color: $link-color;
+    transition: color $speed;
+    text-decoration: none;
+
+    &:hover {
+        color: $link-color-hover;
+    }
+}
+
+
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}

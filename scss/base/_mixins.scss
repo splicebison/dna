@@ -1,0 +1,49 @@
+/*------------------------------------*\
+    #MIXINS
+\*------------------------------------*/
+
+
+/**
+ * Font size with vertical rhythm
+ */
+@mixin font-size($font-size, $line-height: auto) {
+    font-size: $font-size;
+    font-size: ($font-size / $base-font-size) * 1rem;
+
+    @if $line-height == auto {
+        line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+    }
+
+    @else {
+
+        @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+            line-height: $line-height;
+        }
+
+        @elseif ($line-height != none and $line-height != false) {
+            @warn "‘#{$line-height}’ is not a valid value for `line-height`."
+        }
+
+    }
+
+}
+
+/**
+ * Media queries
+ */
+
+// Min-width
+@mixin at-least($width) {
+    @media only screen and (min-width: $width) {
+        @content;
+    }
+    
+}
+
+// Between width
+@mixin between($min-width, $max-width) {
+    @media only screen and (min-width: $min-width) and (max-width: $max-width - 1) {
+       @content; 
+    }
+    
+}
