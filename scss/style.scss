@@ -1,11 +1,12 @@
 /*------------------------------------*\
-    #VENDOR
+    #SET UP
 \*------------------------------------*/
 
-$fa-font-path: "../bower_components/font-awesome/fonts" !default;
-
+@import "base/settings";
 @import "bourbon";
 @import "neat";
+
+// $fa-font-path: "../bower_components/font-awesome/fonts" !default;
 // @import "../bower_components/font-awesome/scss/font-awesome";
 
 

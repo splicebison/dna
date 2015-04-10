@@ -1,3 +1,9 @@
+.contain,
+%contain {
+	@include outer-container(1088px);
+	padding: $base-spacing-unit;
+}
+
 .text-upper,
 %text-upper {
     text-transform: uppercase;
@@ -8,10 +14,9 @@
     text-align: center;
 }
 
-.contain,
-%contain {
-	@include outer-container(1088px);
-	padding: $base-spacing-unit;
+.lede,
+%lede {
+    @include font-size($lede-size);
 }
 
 .list-flat,
@@ -19,4 +24,21 @@
 	margin: 0;
 	padding: 0;
 	list-style: none;
+}
+
+.video-wrapper,
+%video-wrapper {
+	position: relative;
+	padding-bottom: 56.34%;
+	padding-top: rem(25);
+	height: 0;
+	overflow: hidden;
+
+	iframe, object,
+	embed, video {
+	    height: 100%;
+	    position: absolute;
+	    top: 0;
+	    width: 100%;
+	}
 }

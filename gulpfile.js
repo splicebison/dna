@@ -40,6 +40,9 @@ var baseDir = './',
         src: baseDir + 'js/app.js',
         dest: baseDir + 'js',
         bundle: 'bundle.js'
+    },
+    html: {
+        src: baseDir + '*.{html,php}'
     }
 };
 
@@ -129,18 +132,25 @@ gulp.task('watchify', function() {
 /**
  * Watch files
  */
-gulp.task('css-watch', function () {
+gulp.task('watch-css', function () {
     gulp.watch([paths.css.src], ['css']);
 });
 
-gulp.task('watch', ['watchify', 'css-watch']);
+gulp.task('watch-html', function () {
+    gulp.watch([paths.html.src]).on('change', function(file) {
+        return gulp.src([paths.html.src])
+            .pipe(connect.reload());
+    });;
+});
+
+gulp.task('watch', ['watchify', 'watch-css', 'watch-html']);
 
 
 
 /**
  * Spawn server or livereload
  */
-gulp.task('serve', ['connect', 'watchify', 'css-watch']);
+gulp.task('serve', ['connect', 'watchify', 'watch-css', 'watch-html']);
 
 
 
